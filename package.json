@@ -1,0 +1,29 @@
+{
+    "name": "com.radachy.stephen.crc",
+    "displayName": "Create-React-Cordova",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that has create-react-app integrated.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "bootstrap": "yarn && pushd app && yarn && popd",
+        "build": "rm -rf ./www && pushd app && yarn build && popd && mv ./app/build ./www",
+        "start": "yarn build && cordova run ios",
+        "start:ios": "yarn build && cordova run ios",
+        "start:local": "pushd app && yarn start && popd"
+    },
+    "author": "Stephen Radachy",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-ios": "^4.5.4",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    }
+}
